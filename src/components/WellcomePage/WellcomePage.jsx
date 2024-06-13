@@ -1,5 +1,5 @@
 import styles from "./WellcomePage.module.css";
-import { Logo } from "../Logo/Logo";
+import { LogoText } from "../LogoText/LogoText";
 
 export const WellcomePage = () => {
   
@@ -7,7 +7,7 @@ export const WellcomePage = () => {
         <div className={styles.wrapper}>
             <div className={styles.titleBox}>
           <h1>We invite you to our</h1>
-          <Logo />
+          <LogoText />
     </div>
             
       </div>
