@@ -32,6 +32,15 @@ export const CamperFeatures = ({ camper }) => {
         </li>
       )}
 
+      {camper.details.TV > 0 && (
+        <li className={styles.adItem}>
+          <svg className={styles.icon}>
+            <use href={`${icons}#icon-tv`}></use>
+          </svg>
+          TV
+        </li>
+      )}
+
       {camper.engine && (
         <li className={styles.adItem}>
           <svg className={styles.iconFill}>
@@ -56,15 +65,6 @@ export const CamperFeatures = ({ camper }) => {
             <use href={`${icons}#icon-bed`}></use>
           </svg>
           {camper.details.beds} beds
-        </li>
-      )}
-
-      {camper.details.airConditioner > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-conditioner`}></use>
-          </svg>
-          {camper.details.airConditioner} airConditioner
         </li>
       )}
 
@@ -94,6 +94,15 @@ export const CamperFeatures = ({ camper }) => {
           {camper.details.hob} hob
         </li>
       )}
+      
+      {camper.details.airConditioner > 0 && (
+        <li className={styles.adItem}>
+          <svg className={styles.icon}>
+            <use href={`${icons}#icon-conditioner`}></use>
+          </svg>
+          {camper.details.airConditioner} airConditioner
+        </li>
+      )}
 
       {camper.details.freezer > 0 && (
         <li className={styles.adItem}>
@@ -101,15 +110,6 @@ export const CamperFeatures = ({ camper }) => {
             <use href={`${icons}#icon-freezer`}></use>
           </svg>
           freezer
-        </li>
-      )}
-
-      {camper.details.TV > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-tv`}></use>
-          </svg>
-          TV
         </li>
       )}
 

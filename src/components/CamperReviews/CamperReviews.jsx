@@ -16,10 +16,10 @@ export const CamperReviews = ({ reviews }) => {
 CamperReviews.propTypes = {
   reviews: PropTypes.arrayOf(
     PropTypes.shape({
-      author: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
+      reviewer_name: PropTypes.string.isRequired,
+      reviewer_rating: PropTypes.number.isRequired,
       comment: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired
     })
   ).isRequired,
 };

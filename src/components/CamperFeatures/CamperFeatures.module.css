@@ -5,13 +5,13 @@
   gap: 8px;
 }
 .adItem {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 500;
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: 12px 18px;
+  padding: 10px 14px;
   border-radius: 100px;
   background-color: var(--block-features);
   color: var(--main);

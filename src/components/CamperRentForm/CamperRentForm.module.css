@@ -5,7 +5,7 @@
   padding: 24px;
   width: 448px;
   gap: 24px;
-  border: 1px solid rgba(16, 24, 40, 0.2);
+  border: 1px solid var(--border);
   border-radius: 10px;
   max-height: 600px;
 }
@@ -16,7 +16,7 @@
   margin-bottom: 8px;
 }
 .formDesc {
-  color: var(--border);
+  color: var(--main-text);
   font-size: 16px;
   line-height: 24px;
 }
@@ -39,7 +39,7 @@
   border: none;
   outline: none;
   border-radius: 10px;
-  background-color: var(--white);
+  background-color: var(--inputs);
   font-size: 16px;
   line-height: 20px;
 }
@@ -88,7 +88,7 @@
 }
 .btn:hover,
 .btn:focus {
-  background-color: var(--button);
+  background-color: var(--button-active);
 }
 .datePickerWrapper {
   position: absolute;

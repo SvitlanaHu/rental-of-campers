@@ -5,6 +5,7 @@ import { CamperFeatures } from "../CamperFeatures/CamperFeatures";
 import { CamperDetailsInfo } from "../CamperDetailsInfo/CamperDetailsInfo";
 import { CamperImgGallery } from "../CamperImgGallery/CamperImgGallery";
 import { CamperReviews } from "../CamperReviews/CamperReviews";
+import DisplayNumber from '../DisplayNumber/DisplayNumber';
 import TextTruncate from '../TextTruncate/TextTruncate'; 
 import icons from "../../images/sprite.svg";
 import styles from "./ModalDetailsPage.module.css";
@@ -60,7 +61,7 @@ export const ModalDetailsPage = ({ closeModal, camper, onClose, reviewCount, cit
                   </p>
                 </div>
               </div>
-              <p className={styles.price}>€{camper.price},00</p>
+              <p className={styles.price}>€<DisplayNumber number={camper.price} /></p>
             </div>
             <button
               type="button"
@@ -119,20 +120,44 @@ ModalDetailsPage.propTypes = {
   camper: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    location: PropTypes.string.isRequired,
+    adults: PropTypes.number.isRequired,
+    children: PropTypes.number.isRequired,
+    engine: PropTypes.string.isRequired,
+    transmission: PropTypes.string.isRequired,
+    form: PropTypes.string.isRequired,
+    length: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
+    tank: PropTypes.string.isRequired,
+    consumption: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    details: PropTypes.shape({
+      airConditioner: PropTypes.number.isRequired,
+      bathroom: PropTypes.number.isRequired,
+      kitchen: PropTypes.number.isRequired,
+      beds: PropTypes.number.isRequired,
+      TV: PropTypes.number.isRequired,
+      CD: PropTypes.number.isRequired,
+      radio: PropTypes.number.isRequired,
+      shower: PropTypes.number.isRequired,
+      toilet: PropTypes.number.isRequired,
+      freezer: PropTypes.number.isRequired,
+      hob: PropTypes.number.isRequired,
+      microwave: PropTypes.number.isRequired,
+      gas: PropTypes.string.isRequired,
+      water: PropTypes.string.isRequired,
+    }).isRequired,
+    gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
     reviews: PropTypes.arrayOf(
       PropTypes.shape({
-        author: PropTypes.string.isRequired,
-        rating: PropTypes.number.isRequired,
+        reviewer_name: PropTypes.string.isRequired,
+        reviewer_rating: PropTypes.number.isRequired,
         comment: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
       })
     ).isRequired,
-    features: PropTypes.arrayOf(PropTypes.string).isRequired,
-    details: PropTypes.object.isRequired,
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   onClose: PropTypes.func.isRequired,
   reviewCount: PropTypes.number.isRequired,
