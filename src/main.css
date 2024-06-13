@@ -11,6 +11,7 @@
   --rating: #ffc531;
   --main-text: #475467;
   --background: #f4ead1;
+  --eclipse: rgba(0, 0, 0, 0.5);
   --box-shadow-color: #a4882e;
   --animation-shadow: blink 3s infinite;
   --box-shadow: 0 4px 8px 0px var(--box-shadow-color);
@@ -31,6 +32,7 @@
   --header-color: #6c5309;
   --main-text: #caccd1;
   --background: #292621;
+  --eclipse: rgba(97, 64, 19, 0.5);
   --box-shadow-color: #f8cd41;
   --white: #000;
   --night: #c7caf7;
