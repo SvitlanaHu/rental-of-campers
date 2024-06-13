@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { CatalogPage } from "./pages/CatalogPage";
 import { FavoritesPage } from "./pages/FavoritesPage";
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import { ModalDetailsPage } from "./components/ModalDetailsPage/ModalDetailsPage";
 import { CamperFeatures } from "./components/CamperFeatures/CamperFeatures";
 import { CamperReviews } from "./components/CamperReviews/CamperReviews";
@@ -22,7 +23,7 @@ function App() {
         </Route>
         <Route path="/favorite" element={<FavoritesPage />} />
 
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
