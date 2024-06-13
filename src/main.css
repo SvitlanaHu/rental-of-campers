@@ -1,0 +1,47 @@
+@import "./reset.css";
+
+:root {
+  --button: #e44848;
+  --button-active: #d84343;
+  --main: #101828;
+  --border: #1018282b;
+  --inputs: #f7f7f7;
+  --block-features: #f2f4f7;
+  --header-color: #ffc531;
+  --rating: #ffc531;
+  --main-text: #475467;
+  --background: #f4ead1;
+  --box-shadow-color: #a4882e;
+  --animation-shadow: blink 3s infinite;
+  --box-shadow: 0 4px 8px 0px var(--box-shadow-color);
+  --white: #fff;
+  --night: #010235;
+  --animation: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: var(--white);
+  font-family: Inter;
+  color: var(--main-text);
+}
+
+[data-theme="dark"] {
+  --main: #97baff;
+  --border: #97baff28;
+  --inputs: #383838;
+  --block-features: #333436;
+  --header-color: #6c5309;
+  --main-text: #caccd1;
+  --background: #292621;
+  --box-shadow-color: #f8cd41;
+  --white: #000;
+  --night: #c7caf7;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    box-shadow: 0 4px 8px 0px var(--box-shadow-color);
+  }
+  50% {
+    box-shadow: 0 4px 8px 0px transparent;
+  }
+}

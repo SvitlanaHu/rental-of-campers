@@ -1,0 +1,78 @@
+.details {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+}
+h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.price {
+  display: flex;
+  flex-direction: row;
+}
+.favoriteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.svgHeart {
+  fill: var(--white);
+  stroke: var(--main-text);
+  cursor: pointer;
+  transition: fill 0.15s ease-in-out, stroke 0.15s ease-in-out;
+}
+
+.favoriteButton.active .svgHeart {
+  fill: var(--button);
+  stroke: var(--button);
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  height: 24px;
+  align-items: center;
+}
+.ratingBox {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  gap: 4px;
+  align-items: center;
+}
+.svgRating {
+  fill: var(--rating);
+}
+.svgMap {
+  fill: none;
+  stroke: var(--main-text);
+}
+.description {
+  line-height: normal;
+  line-break: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

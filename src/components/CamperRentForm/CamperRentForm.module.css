@@ -1,0 +1,98 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  width: 448px;
+  gap: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  max-height: 600px;
+}
+.formTitle {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.formDesc {
+  color: var(--border);
+  font-size: 16px;
+  line-height: 24px;
+}
+.formGroup {
+  position: relative;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.nameFiled {
+  text-transform: capitalize;
+}
+
+.formFiled {
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: var(--white);
+  font-size: 16px;
+  line-height: 20px;
+}
+.formFiled::placeholder {
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 20px;
+}
+.error {
+  color: red;
+}
+.dateFiled {
+  pointer-events: none;
+}
+
+.textareaField {
+  resize: none;
+  height: 114px;
+}
+.calendarIcon {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btnGroup {
+  display: flex;
+}
+.btn {
+  margin-top: 24px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.05em;
+  padding: 16px 60px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--button);
+  border-radius: 200px;
+  transition: var(--animation);
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--button);
+}
+.datePickerWrapper {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 1000;
+}

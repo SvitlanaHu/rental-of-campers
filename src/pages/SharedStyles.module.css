@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  width: 343px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 64px 32px;
+    gap: 32px;
+    width: 672px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    padding: 100px 64px;
+    width: 1392px;
+  }
+}

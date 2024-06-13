@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  width: 888px;
+  height: 890px;
+  gap: 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  color: var(--main-text);
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

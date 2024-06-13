@@ -1,0 +1,49 @@
+@keyframes move {
+  0% {
+    left: 55px;
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    left: 60px;
+    transform: translateY(2px) rotate(2deg) scale(1.01);
+  }
+  50% {
+    left: 65px;
+    transform: translateY(0px) rotate(4deg) scale(1.025);
+  }
+  75% {
+    left: 70px;
+    transform: translateY(2px) rotate(-2deg) scale(1.012);
+  }
+  100% {
+    left: 75px;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.logoText {
+  left: 55px;
+  color: var(--main-text);
+  position: relative;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 26px;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.spanOf {
+  color: var(--main);
+  transition: color 0.15s ease-in-out;
+}
+.spanCamper {
+  color: var(--button);
+  transition: color 0.15s ease-in-out;
+}
+
+.logoText.moved {
+  animation: move 0.3s ease-out forwards;
+}
+
+.logoText.shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

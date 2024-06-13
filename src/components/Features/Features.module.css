@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.featureName::first-letter {
+  text-transform: uppercase;
+}
+.featureBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  border-color: var(--block-features);
+  background-color: var(--block-features);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.svg {
+  fill: none;
+  stroke: var(--main-text);
+}
+.svgFill {
+  fill: var(--main-text);
+}

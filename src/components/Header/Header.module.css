@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 98vw;
+  height: 55px;
+  background-color: var(--header-color);
+  box-shadow: var(--box-shadow);
+  margin-top: 10px;
+  margin-left: calc(2vw / 2);
+  margin-right: calc(2vw / 2);
+  padding-left: calc(((100vw - 1440px) / 2) + 64px);
+  padding-right: calc(((100vw - 1440px) / 2) + 64px);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 5;
+}

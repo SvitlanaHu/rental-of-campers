@@ -1,0 +1,160 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 343px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    gap: 32px;
+    width: 360px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 360px;
+  }
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+.formLocalGroup {
+  display: flex;
+  flex-direction: column;
+  height: 88px;
+  position: relative;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.label {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+.locatonInput {
+  height: 56px;
+  background-color: var(--inputs);
+  border: none;
+  border-radius: 10px;
+  padding-left: 45px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.locatonInput::placeholder {
+  font-size: 18px;
+}
+.iconMap {
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  fill: none;
+  stroke: var(--main-text);
+  opacity: 0.6;
+}
+
+.locatonInput:hover,
+.locatonInput:focus,
+.locatonInput::placeholder:hover,
+.locatonInput::placeholder:focus {
+  opacity: 1;
+}
+
+.icon {
+  fill: none;
+  stroke: var(--main-text);
+}
+.iconFill {
+  fill: var(--main-text);
+}
+
+.formGroup ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0 0;
+  padding: 24px 0 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.radioBox,
+.formGroup .label {
+  display: flex;
+  flex-direction: column;
+  width: 105px;
+  height: 95px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input[type="checkbox"],
+.formGroup input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.formGroup label:hover {
+  border-color: var(--rating);
+}
+
+.formGroup input[type="checkbox"]:checked + svg,
+.formGroup input[type="radio"]:checked + svg {
+  border-color: var(--button);
+}
+
+.formGroup svg {
+  margin-right: 10px;
+}
+
+.formGroup input[type="checkbox"]:checked + svg + p,
+.formGroup input[type="radio"]:checked + p {
+  border-color: var(--button);
+}
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn {
+  padding: 16px 32px;
+  gap: 10px;
+  border-radius: 200px;
+  opacity: 0px;
+  width: 173px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: center;
+  color: white;
+  background-color: var(--button);
+  border: none;
+}
+
+.btn:hover,
+.btn:focus {
+  font-weight: 700;
+}
+
+.resetFilters {
+  padding: 16px 32px;
+  color: var(--button);
+}

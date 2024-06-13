@@ -1,0 +1,38 @@
+.btn {
+  padding: 4px 8px;
+  font-size: 8px;
+  font-family: Inter;
+  cursor: pointer;
+  background-color: var(--header-color);
+  border-color: var(--header-color);
+  color: var(--main-text);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--box-shadow);
+}
+.btn:hover,
+.btn:active {
+  cursor: pointer;
+  background: var(--night);
+  border-color: var(--night);
+  color: var(--white);
+}
+.btn:focus {
+  border: none;
+  outline: none;
+}
+
+@media only screen and (min-width: 375px) {
+  .btn {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

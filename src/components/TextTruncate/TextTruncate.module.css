@@ -1,0 +1,29 @@
+.textContainer {
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: var(--main);
+}
+
+.text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.expanded {
+  -webkit-line-clamp: unset;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: var(--main);
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0;
+}
