@@ -82,10 +82,16 @@
 }
 .svg {
   width: 200px;
-  animation: rotate-camper 4s infinite;
+  animation: rotate-camper 6s infinite;
 }
 @keyframes rotate-camper {
   0% {
+    transform: rotate(0deg) scale(0.05);
+  }
+  33% {
+    transform: rotate(360deg) scale(1);
+  }
+  66% {
     transform: rotate(0deg) scale(0.05);
   }
   100% {
