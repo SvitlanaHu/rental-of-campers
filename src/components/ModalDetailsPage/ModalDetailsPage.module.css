@@ -135,7 +135,7 @@
   margin-top: 44px;
 }
 .tabs {
-  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  border-bottom: 1px solid var(--border);
   display: flex;
   gap: 40px;
 }
