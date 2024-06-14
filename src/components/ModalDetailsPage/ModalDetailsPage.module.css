@@ -80,7 +80,8 @@
 .ratingSvg {
   width: 16px;
   height: 16px;
-  fill: #ffc531;
+  fill: var(--rating);
+  stroke: var(--rating);
 }
 .ratingText {
   text-decoration: underline;
@@ -92,6 +93,8 @@
 .locationSvg {
   width: 16px;
   height: 16px;
+  fill: none;
+  stroke: var(--main);
 }
 .locationBlock {
   display: flex;

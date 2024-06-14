@@ -10,7 +10,7 @@ import TextTruncate from '../TextTruncate/TextTruncate';
 import icons from "../../images/sprite.svg";
 import styles from "./ModalDetailsPage.module.css";
 
-export const ModalDetailsPage = ({ closeModal, camper, onClose, reviewCount, city, country }) => {
+export const ModalDetailsPage = ({ closeModal, camper, onClose, reviewCount }) => {
   const [activeTab, setActiveTab] = useState("features");
 
   const handleBackdropClick = (e) => {
@@ -46,7 +46,7 @@ export const ModalDetailsPage = ({ closeModal, camper, onClose, reviewCount, cit
               <div className={styles.ratingLocation}>
                 <div className={styles.ratingBlock}>
                   <svg className={styles.ratingSvg}>
-                    <use href="/symbol-defs.svg#icon-rating"></use>
+                    <use href={`${icons}#icon-ratingstar`}></use>
                   </svg>
                   <span className={styles.ratingText}>
                     {camper.rating} ({reviewCount} Reviews)
@@ -54,11 +54,9 @@ export const ModalDetailsPage = ({ closeModal, camper, onClose, reviewCount, cit
                 </div>
                 <div className={styles.locationBlock}>
                   <svg className={styles.locationSvg}>
-                    <use href="/symbol-defs.svg#icon-map-pin"></use>
+                    <use href={`${icons}#icon-map-pin`}></use>
                   </svg> 
-                  <p className={styles.location}>
-                    {city}, {country}
-                  </p>
+                  <span>{camper.location}</span>
                 </div>
               </div>
               <p className={styles.price}>€<DisplayNumber number={camper.price} /></p>
@@ -161,8 +159,6 @@ ModalDetailsPage.propTypes = {
   }).isRequired,
   onClose: PropTypes.func.isRequired,
   reviewCount: PropTypes.number.isRequired,
-  city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
 };
 
 export default ModalDetailsPage;
