@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TextTruncate.module.css';
+import ShowMoreButton from '../ShowMoreButton/ShowMoreButton';
 
 const TextTruncate = ({ text }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -14,14 +15,10 @@ const TextTruncate = ({ text }) => {
       <span className={`${styles.text} ${isExpanded ? styles.expanded : styles.clamped}`}>
         {text}
       </span>
-      <button
+      <ShowMoreButton
         onClick={toggleExpansion}
-        className={
-                  isExpanded ? `${styles.text} ${styles.textClamped}` : styles.textExpanded
-                }
-      >
-        {isExpanded ? 'Show less' : '...Show more'}
-      </button>
+        label={isExpanded ? 'Show less' : '...Show more'}
+      />
     </div>
   );
 };

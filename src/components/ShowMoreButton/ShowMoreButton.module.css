@@ -1,0 +1,13 @@
+.showMoreBtn {
+  background-color: var(--white);
+  color: var(--main);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.showMoreBtn:hover {
+  color: var(--button);
+}

@@ -1,49 +1,50 @@
 import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
-import styles from "./Features.module.css";
 import icons from "../../images/sprite.svg";
+import FeaturesList from "../FeaturesList/FeaturesList";
+import styles from "./Features.module.css";
 
 export const Features = ({ camper }) => {
-  return (
-    <ul className={styles.wrapper} >
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svgFill} width="20" height="20">
-          <use href={`${icons}#icon-users`}></use>
-        </svg>
-        <p className={styles.featureName}>{camper.adults} adults</p>
-      </li>
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svg} width="20" height="20">
-          <use href={`${icons}#icon-gears`}></use>
-        </svg>
-        <p className={styles.featureName}>{camper.transmission}</p>
-      </li>
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svgFill} width="20" height="20">
-          <use href={`${icons}#icon-fuel`}></use>
-        </svg>
-        <p className={styles.featureName}>{camper.engine}</p>
-      </li>
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svg} width="20" height="20">
-          <use href={`${icons}#icon-kitchen`}></use>
-        </svg>
-        <p className={styles.featureName}>Kitchen</p>
-      </li>
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svg} width="20" height="20">
-          <use href={`${icons}#icon-bad`}></use>
-        </svg>
-        <p className={styles.featureName}>{camper.details.beds} beds</p>
-      </li>
-      <li className={styles.featureBox} key={nanoid()}>
-        <svg className={styles.svgFill} width="20" height="20">
-          <use href={`${icons}#icon-ac`}></use>
-        </svg>
-        <p className={styles.featureName}>AC</p>
-      </li>
-    </ul>
-  );
+  const features = [
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-users`,
+      text: `${camper.adults} adults`,
+      iconClass: styles.svgFill,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-gears`,
+      text: camper.transmission,
+      iconClass: styles.svg,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-fuel`,
+      text: camper.engine,
+      iconClass: styles.svgFill,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-kitchen`,
+      text: 'Kitchen',
+      iconClass: styles.svg,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-bed`,
+      text: `${camper.details.beds} beds`,
+      iconClass: styles.svg,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-ac`,
+      text: 'AC',
+      iconClass: styles.svgFill,
+    }
+  ];
+
+  return <FeaturesList features={features} initialVisibleCount={6} />;
 };
 
 Features.propTypes = {

@@ -54,8 +54,8 @@
   cursor: pointer;
   border: none;
   background-color: var(--white);
-  fill: var(--main);
-  stroke: var(--main);
+  fill: var(--main-text);
+  stroke: var(--main-text);
 }
 .buttonClose:hover,
 .buttonClose:focus {
@@ -122,7 +122,6 @@
 }
 
 .description {
-  color: var(--main);
   font-size: 16px;
   line-height: 24px;
   display: -webkit-box;
@@ -130,6 +129,7 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--main-text);
 }
 .featureReviews {
   margin-top: 44px;
@@ -144,7 +144,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  color: var(--main);
+  color: var(--main-text);
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;

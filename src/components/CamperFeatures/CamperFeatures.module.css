@@ -14,17 +14,17 @@
   padding: 10px 14px;
   border-radius: 100px;
   background-color: var(--block-features);
-  color: var(--main);
+  color: var(--main-text);
 }
 .icon {
   width: 20px;
   height: 20px;
   fill: none;
-  stroke: var(--main);
+  stroke: var(--main-text);
 }
 .iconFill {
   width: 20px;
   height: 20px;
-  fill: var(--main);
+  fill: var(--main-text);
   stroke: none;
 }

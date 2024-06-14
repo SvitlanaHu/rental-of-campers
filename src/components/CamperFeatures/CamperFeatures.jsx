@@ -1,137 +1,98 @@
+import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
-import styles from "./CamperFeatures.module.css";
 import icons from "../../images/sprite.svg";
+import FeaturesList from "../FeaturesList/FeaturesList";
+import styles from "./CamperFeatures.module.css";
 
-export const CamperFeatures = ({ camper }) => {
-  return (
-    <ul className={styles.advList}>
-      {camper.adults && (
-        <li className={styles.adItem}>
-          <svg className={styles.iconFill}>
-            <use href={`${icons}#icon-users`}></use>
-          </svg>{" "}
-          {camper.adults} adults
-        </li>
-      )}
+export const CamperFeatures = ({ camper, showAllFeatures = false }) => {
+  const features = [
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-users`,
+      text: `${camper.adults} adults`,
+      iconClass: styles.iconFill,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-gears`,
+      text: camper.transmission,
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-ac`,
+      text: 'AC',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-tv`,
+      text: 'TV',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-fuel`,
+      text: camper.engine,
+      iconClass: styles.iconFill,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-kitchen`,
+      text: 'Kitchen',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-bed`,
+      text: `${camper.details.beds} beds`,
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-bathroom`,
+      text: 'Bathroom',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-cd`,
+      text: 'CD',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-radio`,
+      text: 'Radio',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-hob`,
+      text: `${camper.details.hob} hob`,
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-conditioner`,
+      text: `${camper.details.airConditioner} airConditioner`,
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-freezer`,
+      text: 'Freezer',
+      iconClass: styles.icon,
+    },
+    {
+      id: nanoid(),
+      icon: `${icons}#icon-microwave`,
+      text: 'Microwave',
+      iconClass: styles.icon,
+    }
+  ];
 
-      {camper.transmission && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-gears`}></use>
-          </svg>
-          <p>{camper.transmission}</p>
-        </li>
-      )}
-
-      {camper.details.airConditioner > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-ac`}></use>
-          </svg>
-          <p>AC</p>
-        </li>
-      )}
-
-      {camper.details.TV > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-tv`}></use>
-          </svg>
-          TV
-        </li>
-      )}
-
-      {camper.engine && (
-        <li className={styles.adItem}>
-          <svg className={styles.iconFill}>
-            <use href={`${icons}#icon-fuel`}></use>
-          </svg>
-          {camper.engine}
-        </li>
-      )}
-
-      {camper.details.kitchen > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-kitchen`}></use>
-          </svg>
-          Kitchen
-        </li>
-      )}
-
-      {camper.details.beds > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-bed`}></use>
-          </svg>
-          {camper.details.beds} beds
-        </li>
-      )}
-
-      {camper.details.CD > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-cd`}></use>
-          </svg>
-          CD
-        </li>
-      )}
-
-      {camper.details.radio > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-radio`}></use>
-          </svg>
-          Radio
-        </li>
-      )}
-
-      {camper.details.hob > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-hob`}></use>
-          </svg>
-          {camper.details.hob} hob
-        </li>
-      )}
-      
-      {camper.details.airConditioner > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-conditioner`}></use>
-          </svg>
-          {camper.details.airConditioner} airConditioner
-        </li>
-      )}
-
-      {camper.details.freezer > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-freezer`}></use>
-          </svg>
-          freezer
-        </li>
-      )}
-
-      {camper.details.bathroom > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-bathroom`}></use>
-          </svg>
-          Bathroom
-        </li>
-      )}
-
-      {camper.details.microwave > 0 && (
-        <li className={styles.adItem}>
-          <svg className={styles.icon}>
-            <use href={`${icons}#icon-microwave`}></use>
-          </svg>
-          Microwave
-        </li>
-      )}
-    </ul>
-  );
+  return <FeaturesList features={features} initialVisibleCount={9} showAllByDefault={showAllFeatures} />;
 };
 
 CamperFeatures.propTypes = {
@@ -152,4 +113,6 @@ CamperFeatures.propTypes = {
       microwave: PropTypes.number,
     }).isRequired,
   }).isRequired,
+  showAllFeatures: PropTypes.bool,
 };
+
