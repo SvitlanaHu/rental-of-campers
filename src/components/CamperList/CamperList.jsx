@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   selectCampersCount, 
-  selectGetCamperList,
+  selectFilteredCampers,
   selectIsLoading,
   selectFavoritesIDs,
   selectShowedVans,
@@ -18,15 +18,15 @@ import styles from "./CamperList.module.css";
 export const CamperList = () => {  
   const location = useLocation();
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const camperList = useSelector(selectGetCamperList);
+  // const isLoading = useSelector(selectIsLoading);
+  const camperList = useSelector(selectFilteredCampers);
   const campersCount = useSelector(selectCampersCount);
   const showedVans = useSelector(selectShowedVans);
   const favoriteCampers = useSelector(selectFavoritesIDs);
 
-  useEffect(() => {
-    dispatch(fetchCamperList());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchCamperList());
+  // }, [dispatch]);
 
   function handleLoadMore() {
     const newShowedVans = showedVans + 4;
@@ -37,18 +37,33 @@ export const CamperList = () => {
   return (
     <>
       {location.pathname === "/catalog" && (
-        <div className={styles.wrapper}>
-          <ul className={styles.box}>
-            {!isLoading &&
-              camperList
+        <div className={styles.wrapper} id="camperList">
+          {camperList.length ? (
+            <ul className={styles.box}>
+              {selectIsLoading &&
+                camperList
                 ?.map((camper) => {
                   return (
                     <li key={camper._id}>
                       <CamperListItem camper={camper} />
                     </li>
                   );
-                })}
+              })}
           </ul>
+          ) : (
+              <div className={styles.infoWrapper}>
+              <div className={styles.img}>
+                <img src={logo} alt="My camper"  className={styles.svg} />
+              </div>
+                
+              <div className={styles.content}>
+                <p className={styles.info}>
+                  There is no any favorite campers yet...
+                </p>
+              </div>
+            </div>
+          )}
+          
           {campersCount > showedVans && (
             <button
               className={styles.btn}
@@ -60,11 +75,12 @@ export const CamperList = () => {
           )}
         </div>
       )}
+
       {location.pathname === "/favorite" && (
         <div className={styles.wrapper}>
           {favoriteCampers.length ? (
             <ul className={styles.box}>
-              {!isLoading &&
+              {selectIsLoading &&
                 camperList
                   ?.filter((camper) => favoriteCampers.includes(camper._id))
                   .map((camper) => (
