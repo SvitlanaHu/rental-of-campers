@@ -94,7 +94,7 @@
   width: 16px;
   height: 16px;
   fill: none;
-  stroke: var(--main);
+  stroke: var(--main-text);
 }
 .locationBlock {
   display: flex;
