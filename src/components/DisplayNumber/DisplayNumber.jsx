@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 function DisplayNumber({ number }) {
   return (
-    <div>
+    <span>
       {number.toFixed(2)}
-    </div>
+    </span>
   );
 }
 
