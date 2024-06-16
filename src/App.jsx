@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { CatalogPage } from "./pages/CatalogPage";
 import { FavoritesPage } from "./pages/FavoritesPage";
@@ -18,11 +18,14 @@ function App() {
           <Route path="/catalog/:camperId" element={<ModalDetailsPage />}>
             <Route path="features" element={<CamperFeatures />} />
             <Route path="reviews" element={<CamperReviews />} />
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Route>
-        <Route path="/favorite" element={<FavoritesPage />} />
-
+        <Route path="/favorite" element={<FavoritesPage />}>          
+            <Route path="features" element={<CamperFeatures />} />
+            <Route path="reviews" element={<CamperReviews />} />
+            <Route path="*" element={<NotFoundPage />} />          
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
