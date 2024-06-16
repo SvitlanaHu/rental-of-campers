@@ -5,7 +5,7 @@ export const LogoText = forwardRef((props, ref) => {
 
   useEffect(() => {
     const tId = setTimeout(() => {
-      if (ref.current) {
+      if (ref && ref.current) {
         ref.current.classList.add(styles.moved);
       }
     }, 2500);

@@ -3,7 +3,6 @@ import { CamperReviewItem } from "../CamperReviewItem/CamperReviewItem";
 import styles from "./CamperReviews.module.css";
 
 export const CamperReviews = ({ reviews }) => {
-  console.log(reviews);
   return (
     <ul className={styles.container}>
       {reviews.map((review, index) => (
