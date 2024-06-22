@@ -5,7 +5,11 @@ import { produce } from "immer";
 const camperSlice = createSlice({
   name: "camperData",
   initialState: {
-    campers: [],
+    campers: {
+      data: [],
+      campersCount: 0,
+      promoImages: []
+    },
     isLoading: false,
     showedVans: 4,
     favoritesIDs: [],
